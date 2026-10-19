@@ -38,4 +38,12 @@ public class Employee {
     public void setSalary(int salary) {
         this.salary = salary;
     }
+
+    @Override
+    public boolean equals(Object a) {
+        if (this == a) return true;
+        if (a == null || getClass() != a.getClass()) return false;
+        Employee employee = (Employee) a;
+        return salary == employee.salary;
+    }
 }
