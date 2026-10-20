@@ -38,4 +38,21 @@ public class Employee {
     public void setSalary(int salary) {
         this.salary = salary;
     }
+
+    @Override
+    public boolean equals(Object a) {
+        if (this == a) return true;
+        if (a == null || getClass() != a.getClass()) return false;
+        Employee employee = (Employee) a;
+        return salary == employee.salary;
+    }
+
+    @Override
+    public String toString() {
+        return "Сотрудник [id = " + this.id + ", Ф.И.О. = " + this.fullName + ", отдел = " + this.department + ", зарплата = " + this.salary + "]";
+    }
+
+    public void printShortInfo() {
+        System.out.println("Ф.И.О.: " + this.fullName + ", зарплата: " + this.salary);
+    }
 }
