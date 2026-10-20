@@ -46,4 +46,13 @@ public class Employee {
         Employee employee = (Employee) a;
         return salary == employee.salary;
     }
+
+    @Override
+    public String toString() {
+        return "Сотрудник [id = " + this.id + ", Ф.И.О. = " + this.fullName + ", отдел = " + this.department + ", зарплата = " + this.salary + "]";
+    }
+
+    public void printShortInfo() {
+        System.out.println("Ф.И.О.: " + this.fullName + ", зарплата: " + this.salary);
+    }
 }
