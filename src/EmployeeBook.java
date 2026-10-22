@@ -1,3 +1,5 @@
+import java.util.Scanner;
+
 public class EmployeeBook {
     private Employee[] employees = new Employee[10];
 
@@ -70,6 +72,24 @@ public class EmployeeBook {
                 }
             }
             System.out.println("Сотрудник: " + emp.getFullName() + " Зарплата: " + salary + " Налог: " + tax);
+        }
+    }
+
+    public void departmentSalary(int numDeportment, double percent) {
+        for (Employee emp : employees) {
+
+            if (emp != null) {
+                continue;
+            }
+
+            if (emp.getDepartment() != numDeportment) {
+                continue;
+            }
+
+            double currentSalary = emp.getSalary();
+            double updatedSalary = currentSalary + (currentSalary * percent / 100.0);
+
+            emp.setSalary((int) updatedSalary);
         }
     }
 }
