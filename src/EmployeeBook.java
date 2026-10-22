@@ -92,4 +92,26 @@ public class EmployeeBook {
             emp.setSalary((int) updatedSalary);
         }
     }
+
+    public void highSalaryDeportment(int numDeportment, int salary) {
+        boolean empFound = false;
+
+        for (int i = 0; i < employees.length; i++) {
+            Employee emp = employees[i];
+
+            if (emp != null) {
+                if (emp.getDepartment() == numDeportment && emp.getSalary() > salary) {
+                    System.out.println("ID сотрудника: " + emp.getId() + " ");
+                    emp.printShortInfo();
+                    empFound = true;
+
+                    break;
+                }
+            }
+        }
+
+        if (empFound) {
+            System.out.println("В отделе " + numDeportment + " нет сотрудников с зарплатой выше " + salary);
+        }
+    }
 }
