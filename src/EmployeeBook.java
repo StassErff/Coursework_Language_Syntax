@@ -39,4 +39,37 @@ public class EmployeeBook {
 
         return (double) totalSalary / employeeCount;
     }
+
+    public void taxValue(String taxScheme) {
+        System.out.println("===== Расчет налогов по схеме: " + taxScheme + " =====");
+
+        for (Employee emp : employees) {
+            double tax = 0;
+            int salary = emp.getSalary();
+
+            if (emp != null) {
+
+                switch (taxScheme) {
+                    case "PROPORTIONAL":
+                        tax = salary * 0.13;
+                        break;
+
+                    case "PROGRESSIVE":
+                        if (salary <= 150) {
+                            tax = salary * 0.13;
+                        } else if (salary <= 350) {
+                            tax = salary * 0.17;
+                        } else {
+                            tax = salary * 0.21;
+                        }
+                        break;
+
+                    default:
+                        System.out.println("Ошибка неизвестная схема налога " + taxScheme);
+                        return;
+                }
+            }
+            System.out.println("Сотрудник: " + emp.getFullName() + " Зарплата: " + salary + " Налог: " + tax);
+        }
+    }
 }
