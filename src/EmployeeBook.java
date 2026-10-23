@@ -1,3 +1,5 @@
+import java.util.Objects;
+
 public class EmployeeBook {
     private Employee[] employees = new Employee[10];
 
@@ -141,5 +143,22 @@ public class EmployeeBook {
         } else if (foundCound < employeeNumber) {
             System.out.println("Найдено всего " + foundCound + " из " + employeeNumber + " запрошенных");
         }
+    }
+
+    public boolean searchingForAnEmployeeBasedOnSalary(Employee salaryEmployees) {
+        if (salaryEmployees == null) {
+            return false;
+        }
+
+        for (Employee emp : employees) {
+            if (emp != null) {
+
+                if (Objects.equals(emp.getSalary(), salaryEmployees.getSalary())) {
+                    return true;
+                }
+            }
+        }
+
+        return false;
     }
 }
