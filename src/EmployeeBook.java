@@ -158,6 +158,18 @@ public class EmployeeBook {
                 }
             }
         }
+        return false;
+    }
+
+    public boolean populatingEmployeeBook(Employee employeeNew) {
+        for (int i = 0; i < employees.length; i++) {
+            if (employees[i] != null) {
+                continue;
+            }
+
+            employees[i] = employeeNew;
+            return true;
+        }
 
         return false;
     }
