@@ -3,11 +3,12 @@ import java.util.Objects;
 public class EmployeeBook {
     private Employee[] employees = new Employee[10];
 
-    public EmployeeBook() {
-    }
-
     public Employee[] getEmployees() {
         return employees;
+    }
+
+    public void setEmployees(Employee[] employees) {
+        this.employees = employees;
     }
 
     public void printAllEmployees() {
