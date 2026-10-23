@@ -21,5 +21,8 @@ public class Main {
 
             System.out.println("Добавление " + emp.getFullName() + ": " + (result ? "Успешно" : "Нет места"));
         }
+
+        employeeBook.printAllEmployees();
+        System.out.println(employeeBook.averageSalary());
     }
 }

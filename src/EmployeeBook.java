@@ -7,10 +7,6 @@ public class EmployeeBook {
         return employees;
     }
 
-    public void setEmployees(Employee[] employees) {
-        this.employees = employees;
-    }
-
     public void printAllEmployees() {
         for (Employee e : employees) {
             if (e != null) {
@@ -27,19 +23,9 @@ public class EmployeeBook {
         for (Employee emp : employees) {
             if (emp != null) {
                 totalSalary += emp.getSalary();
-
-                if (foundNull) {
-                    employeeCount++;
-                }
-            } else {
-                foundNull = true;
+                employeeCount++;
             }
         }
-
-        if (employeeCount == 0) {
-            return 0.0;
-        }
-
         return (double) totalSalary / employeeCount;
     }
 
