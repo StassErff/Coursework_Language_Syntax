@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 public class EmployeeBook {
     private Employee[] employees = new Employee[10];
 
@@ -112,6 +110,36 @@ public class EmployeeBook {
 
         if (empFound) {
             System.out.println("В отделе " + numDeportment + " нет сотрудников с зарплатой выше " + salary);
+        }
+    }
+
+    public void lowerSalaryWage(int wage, int employeeNumber) {
+        System.out.println("===== Первые " + employeeNumber + " сотрудников с зарплатой меньше " + wage + " =====");
+
+        int i = 0;
+        int foundCound = 0;
+
+        while (i < employees.length) {
+            Employee emp = employees[i];
+
+            if (emp != null) {
+                if (emp.getSalary() < wage) {
+                    System.out.println(emp);
+                    foundCound++;
+
+                    if (foundCound == employeeNumber) {
+                        break;
+                    }
+                }
+            }
+
+            i++;
+        }
+
+        if (foundCound == 0) {
+            System.out.println("Сотрудников с ззарплатой меньше " + wage + " не найдено");
+        } else if (foundCound < employeeNumber) {
+            System.out.println("Найдено всего " + foundCound + " из " + employeeNumber + " запрошенных");
         }
     }
 }
