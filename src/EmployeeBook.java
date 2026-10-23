@@ -173,4 +173,16 @@ public class EmployeeBook {
 
         return false;
     }
+
+    public Employee retrievingAnEmployeeById(int idEmployee) {
+        for (int i = 0; i < employees.length; i++) {
+            if (employees[i] == null) {
+                continue;
+            }
+            if (employees[i].getId() == idEmployee) {
+                return employees[i];
+            }
+        }
+        return null;
+    }
 }
