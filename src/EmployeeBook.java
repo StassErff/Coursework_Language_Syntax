@@ -94,11 +94,10 @@ public class EmployeeBook {
 
                     break;
                 }
+                if (empFound) {
+                    System.out.println("В отделе " + numDeportment + " нет сотрудников с зарплатой выше " + salary);
+                }
             }
-        }
-
-        if (empFound) {
-            System.out.println("В отделе " + numDeportment + " нет сотрудников с зарплатой выше " + salary);
         }
     }
 

@@ -23,6 +23,15 @@ public class Main {
         }
 
         employeeBook.printAllEmployees();
-        System.out.println(employeeBook.averageSalary());
+        System.out.println("Среднее значение зарплат: " + employeeBook.averageSalary());
+
+        employeeBook.taxValue("PROGRESSIVE");
+        employeeBook.highSalaryDeportment(4, 250);
+        employeeBook.lowerSalaryWage(250, 7);
+        employeeBook.retrievingAnEmployeeById(5);
+
+        //С этими методами проблемма
+        employeeBook.departmentSalary(1, 15);
+        employeeBook.searchingForAnEmployeeBasedOnSalary(initialEmployees[10]);
     }
 }
