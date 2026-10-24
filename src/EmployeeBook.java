@@ -65,7 +65,7 @@ public class EmployeeBook {
     public void departmentSalary(int numDeportment, double percent) {
         for (Employee emp : employees) {
 
-            if (emp != null) {
+            if (emp == null) {
                 continue;
             }
 
@@ -131,17 +131,13 @@ public class EmployeeBook {
         }
     }
 
-    public boolean searchingForAnEmployeeBasedOnSalary(Employee salaryEmployees) {
-        if (salaryEmployees == null) {
-            return false;
-        }
-
+    public boolean searchingForAnEmployeeBasedOnSalary(int salary) {
         for (Employee emp : employees) {
-            if (emp != null) {
-
-                if (Objects.equals(emp.getSalary(), salaryEmployees.getSalary())) {
-                    return true;
-                }
+            if (emp == null) {
+                continue;
+            }
+            if (emp.getSalary() == salary) {
+                return true;
             }
         }
         return false;
